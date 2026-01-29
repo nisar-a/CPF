@@ -4,7 +4,7 @@ import NotificationsProvider, { useNotification } from './Notifications';
 import './App.css';
 import logo from './logo.jpeg';
 
-const API_URL = 'https://cpf-topaz.vercel.app/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://cpf-topaz.vercel.app/api';
 
 axios.interceptors.request.use(config => {
   const token = localStorage.getItem('token');

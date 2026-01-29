@@ -12,8 +12,8 @@ app.use(cors());
 
 const upload = multer({ storage: multer.memoryStorage() });
 
-const JWT_SECRET = 'choosekonguengineeringcollegeforbestfuture';
-const MONGODB_URI = 'mongodb+srv://nisar:nisar%402004@cluster0.7q9px.mongodb.net/CPF?appName=Cluster0';
+const JWT_SECRET = process.env.JWT_SECRET || 'choosekonguengineeringcollegeforbestfuture';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://nisar:nisar%402004@cluster0.7q9px.mongodb.net/CPF?appName=Cluster0';
 
 // MongoDB Connection
 mongoose.connect(MONGODB_URI, {
