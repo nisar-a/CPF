@@ -45,6 +45,7 @@ This project is configured for easy deployment to Render.
    ```
 
 2. **Deploy on Render**
+   - See [`ENVIRONMENT_VARIABLES.md`](ENVIRONMENT_VARIABLES.md) for exact values to use
    - See [`QUICK_START.md`](QUICK_START.md) for quick steps
    - See [`RENDER_DEPLOYMENT_GUIDE.md`](RENDER_DEPLOYMENT_GUIDE.md) for detailed instructions
 
@@ -52,6 +53,10 @@ This project is configured for easy deployment to Render.
 
 - ✅ `render.yaml` - Automatic deployment configuration
 - ✅ `.env.example` - Environment variables template
+- ✅ `backend/.env` - Backend environment variables (ready to use)
+- ✅ `frontend/.env` - Frontend environment variables (ready to use)
+- ✅ `backend/.env.production` - Production environment variables
+- ✅ `ENVIRONMENT_VARIABLES.md` - **Copy-paste guide for Render**
 - ✅ `frontend/public/_redirects` - React Router configuration
 - ✅ Updated code to use environment variables
 
@@ -83,8 +88,9 @@ This project is configured for easy deployment to Render.
    ```
 
 4. **Configure Environment Variables**
-   - Copy `.env.example` to `.env`
-   - Update MongoDB connection string and JWT secret
+   - Backend and Frontend `.env` files are already created
+   - For local development: Files are ready to use
+   - For production: See [`ENVIRONMENT_VARIABLES.md`](ENVIRONMENT_VARIABLES.md)
 
 5. **Run Backend**
    ```bash
@@ -124,18 +130,24 @@ npm run seed
 - **Testing**: Jest, React Testing Library
 
 ## 📊 Environment Variables
+Local Development (Already Configured)
 
-### Backend
+**Backend** (`backend/.env`):
 ```
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/CPF
-JWT_SECRET=your-secret-key
+MONGODB_URI=mongodb+srv://nisar:nisar%402004@cluster0.7q9px.mongodb.net/CPF?appName=Cluster0
+JWT_SECRET=choosekonguengineeringcollegeforbestfuture
 PORT=5000
-NODE_ENV=production
+NODE_ENV=development
 ```
 
-### Frontend
+**Frontend** (`frontend/.env`):
 ```
 REACT_APP_API_URL=http://localhost:5000/api
+```
+
+### Production (Render)
+
+See [`ENVIRONMENT_VARIABLES.md`](ENVIRONMENT_VARIABLES.md) for exact copy-paste values.CT_APP_API_URL=http://localhost:5000/api
 ```
 
 ## 🔐 Security
@@ -173,9 +185,10 @@ REACT_APP_API_URL=http://localhost:5000/api
 4. Push to the branch
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed for educational purposes.
+## 📄 Licensehelp:
+- [`ENVIRONMENT_VARIABLES.md`](ENVIRONMENT_VARIABLES.md) - Copy-paste environment values
+- [`QUICK_START.md`](QUICK_START.md) - Quick deployment steps
+- [`RENDER_DEPLOYMENT_GUIDE.md`](RENDER_DEPLOYMENT_GUIDE.md) - Comprehensive guid
 
 ## 🆘 Support
 

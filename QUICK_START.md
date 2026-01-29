@@ -36,16 +36,26 @@ git push origin main
 **Option B: Manual**
 - Follow detailed steps in `RENDER_DEPLOYMENT_GUIDE.md`
 
-### 3️⃣ Set Environment Variables
+### 3️⃣ Set Environment Variables on Render
 
-**Backend Service:**
-- `MONGODB_URI` = Your MongoDB Atlas connection string
-- `JWT_SECRET` = Auto-generated (or set your own)
-- `PORT` = 10000 (already set)
-- `NODE_ENV` = production (already set)
+**Backend Service (cpf-backend):**
 
-**Frontend Service:**
-- `REACT_APP_API_URL` = `https://your-backend.onrender.com/api`
+Copy and paste these exact values in Render:
+
+| Key | Value |
+|-----|-------|
+| `MONGODB_URI` | `mongodb+srv://nisar:nisar%402004@cluster0.7q9px.mongodb.net/CPF?appName=Cluster0` |
+| `JWT_SECRET` | `choosekonguengineeringcollegeforbestfuture2026SecureKey` |
+| `PORT` | `10000` |
+| `NODE_ENV` | `production` |
+
+**Frontend Service (cpf-frontend):**
+
+| Key | Value |
+|-----|-------|
+| `REACT_APP_API_URL` | `https://cpf-backend.onrender.com/api` |
+
+⚠️ **Note:** Replace `cpf-backend` with your actual Render backend service name if different.
 
 ### 4️⃣ Wait for Deployment
 - Backend: ~5-10 minutes
@@ -57,15 +67,18 @@ git push origin main
 
 ---
 
-## 📋 MongoDB Atlas Setup (Required)
+## 📋 MongoDB Atlas Verification
 
-1. Create account: https://www.mongodb.com/cloud/atlas
-2. Create free cluster
-3. Database Access → Add user with password
-4. Network Access → Allow 0.0.0.0/0 (all IPs)
-5. Get connection string:
+**✅ Your MongoDB is already configured!**
+
+Just verify these settings:
+
+1. Login to: https://cloud.mongodb.com
+2. **Network Access** → Ensure `0.0.0.0/0` is allowed
+3. **Database Access** → User `nisar` should exist
+4. Your connection string:
    ```
-   mongodb+srv://username:password@cluster.mongodb.net/CPF
+   mongodb+srv://nisar:nisar%402004@cluster0.7q9px.mongodb.net/CPF
    ```
 
 ---
@@ -101,8 +114,11 @@ For detailed instructions, see: **`RENDER_DEPLOYMENT_GUIDE.md`**
 - Verify all dependencies in package.json
 
 **Backend won't connect to MongoDB?**
-- Check `MONGODB_URI` is correct
-- Verify Network Access in MongoDB Atlas
+- Verify environment variables match exactly:
+  ```
+  MONGODB_URI=mongodb+srv://nisar:nisar%402004@cluster0.7q9px.mongodb.net/CPF?appName=Cluster0
+  ```
+- Check Network Access in MongoDB Atlas allows 0.0.0.0/0
 
 **Frontend can't reach backend?**
 - Check `REACT_APP_API_URL` includes `/api`
